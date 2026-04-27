@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>痛包摆盘 Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>🎀 痛包摆盘 Demo</h1>
+        <p>可爱清新风 | 背包乱斗核心：买东西 + 摆盘增益</p>
+      </div>
+      <div class="stats">
+        <span>💰 樱桃币：<b id="gold">20</b></span>
+        <span>⭐ 胜场：<b id="wins">0</b></span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel bag-panel">
+        <h2>亚克力痛包（点击格子放置 / 移除）</h2>
+        <div class="bag-meta">
+          <span>容量：<b id="bag-size-label">4 x 4</b></span>
+          <span>战力：<b id="power">0</b></span>
+        </div>
+        <div id="bag-grid" class="bag-grid" aria-label="bag-grid"></div>
+      </section>
+
+      <section class="panel shop-panel">
+        <h2>商店</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="item">物品</button>
+          <button class="tab" data-tab="bag">痛包拓展</button>
+        </div>
+
+        <div id="shop-items" class="shop-list"></div>
+        <div id="shop-bag" class="shop-list hidden"></div>
+
+        <div class="selected-card" id="selected-card">
+          <h3>当前选择</h3>
+          <p>请选择一个商品后，再点击痛包格子进行摆盘。</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="panel battle-panel">
+      <h2>自动对战预览（简化）</h2>
+      <p>匹配“当前池子”中的玩家存档（Demo 用随机敌人模拟），比较战力决定胜负。</p>
+      <button id="battle-btn" class="primary-btn">开始一场自动战斗</button>
+      <div id="battle-log" class="battle-log">等待对战...</div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
